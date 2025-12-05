@@ -91,21 +91,33 @@ CHANNEL_LAYERS = {
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
-# Use environment variables for database configuration
-DATABASES = {
-    'default': {
-        'ENGINE': os.environ.get('DB_ENGINE', 'django.db.backends.sqlite3'),
-        'NAME': os.environ.get('DB_NAME', BASE_DIR / 'db.sqlite3'),
-        'USER': os.environ.get('DB_USER', ''),
-        'PASSWORD': os.environ.get('DB_PASSWORD', ''),
-        'HOST': os.environ.get('DB_HOST', ''),
-        'PORT': os.environ.get('DB_PORT', ''),
-    }
-}
+import dj_database_url
 
-# SQLite fallback (if DB_ENGINE not set)
-if DATABASES['default']['ENGINE'] == 'django.db.backends.sqlite3':
-    DATABASES['default']['NAME'] = BASE_DIR / 'db.sqlite3'
+# Use DATABASE_URL if available (for Render deployment)
+if 'DATABASE_URL' in os.environ:
+    DATABASES = {
+        'default': dj_database_url.config(
+            default=os.environ.get('DATABASE_URL'),
+            conn_max_age=600,
+            ssl_require=True
+        )
+    }
+else:
+    # Local development with environment variables
+    DATABASES = {
+        'default': {
+            'ENGINE': os.environ.get('DB_ENGINE', 'django.db.backends.sqlite3'),
+            'NAME': os.environ.get('DB_NAME', BASE_DIR / 'db.sqlite3'),
+            'USER': os.environ.get('DB_USER', ''),
+            'PASSWORD': os.environ.get('DB_PASSWORD', ''),
+            'HOST': os.environ.get('DB_HOST', ''),
+            'PORT': os.environ.get('DB_PORT', ''),
+        }
+    }
+    
+    # SQLite fallback
+    if DATABASES['default']['ENGINE'] == 'django.db.backends.sqlite3':
+        DATABASES['default']['NAME'] = BASE_DIR / 'db.sqlite3'
 
 AUTH_USER_MODEL = 'users.User'
 
