@@ -1,290 +1,195 @@
-# 🍕 Zomato Clone - Complete Food Delivery Platform
+# 🍕 Zomato Clone - Food Delivery Platform
 
-A full-featured food delivery and restaurant discovery platform built with Django and Django REST Framework. This project demonstrates expertise in full-stack development, REST APIs, real-time WebSocket communication, and complex database relationships.
+[![Python](https://img.shields.io/badge/Python-3.11+-blue.svg)](https://www.python.org/downloads/)
+[![Django](https://img.shields.io/badge/Django-5.2-green.svg)](https://www.djangoproject.com/)
+[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![GitHub](https://img.shields.io/badge/GitHub-Pradhyumn1-black.svg)](https://github.com/Pradhyumn1)
 
-![Django](https://img.shields.io/badge/Django-5.2-green)
-![DRF](https://img.shields.io/badge/DRF-3.16-blue)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-14-blue)
-![Python](https://img.shields.io/badge/Python-3.11+-yellow)
+A full-featured food delivery and restaurant management platform built with Django and Django REST Framework. Features include multi-role user system, real-time order tracking, restaurant management, and complete REST API.
 
-## 🌟 Features
+🌐 **Live Demo**: [Portfolio Site](https://pradhyumn1.github.io/zomato-clone/)
 
-### 🔐 Multi-User System
-- **Customer**: Browse restaurants, place orders, track delivery, write reviews
-- **Restaurant Owner**: Manage menu, update prices, track incoming orders, update status
-- **Delivery Personnel**: View assigned orders, update delivery status
-- **Admin**: Complete dashboard to manage everything
+---
 
-### 🎨 Beautiful UI
-- **Zomato-like Design**: Modern, responsive interface with red theme
-- **Customer Pages**: Browse restaurants, search by cuisine, view menus, order tracking
-- **Vendor Dashboard**: Professional dashboard for restaurant owners
-- **Mobile Responsive**: Works perfectly on all devices
+## ✨ Features
 
-### 🍽️ Restaurant Management
-- Full CRUD operations for restaurants
-- Menu categories and food items
+### 🔐 **Multi-Role System**
+- Customer, Restaurant Owner, Delivery, and Admin roles
+- Token-based authentication
+- Secure user management
+
+### 🍽️ **Restaurant Management**
+- Browse and search restaurants
+- Filter by cuisine type
 - Real-time availability updates
-- Search and filter by cuisine type
-- Geolocation support
+- Menu categories and food items
 
-### 🛒 Order Management
+### 🛒 **Order System**
 - Shopping cart functionality
-- Place orders with multiple items
-- Order history tracking
-- Real-time order status updates (WebSocket)
-- Mock payment gateway integration
+- Place and track orders
+- Real-time order status (WebSocket)
+- Order history
 
-### ⭐ Reviews & Ratings
+### ⭐ **Reviews & Ratings**
 - 1-5 star rating system
-- Customer reviews for restaurants
-- Review management
+- Customer reviews
+- Restaurant feedback
 
-### 🔧 Advanced Features
-- **REST API**: Complete RESTful API with Django REST Framework
-- **WebSocket Support**: Real-time notifications using Django Channels
-- **Token Authentication**: Secure API access
-- **Search & Filter**: Advanced filtering with Django Q objects
-- **Admin Panel**: Powerful Django admin customization
-- **CORS Enabled**: Ready for frontend integration
+### 🎨 **Modern UI**
+- Zomato-like responsive design
+- Customer and vendor dashboards
+- Beautiful landing pages
 
-## 🚀 Live Demo
-
-**Homepage**: Browse restaurants and cuisines  
-**Customer Dashboard**: Track your orders  
-**Vendor Dashboard**: Manage your restaurant  
-
-## 📸 Screenshots
-
-### Homepage
-![Homepage](screenshots/home.png)
-
-### Restaurant List
-![Restaurants](screenshots/restaurants.png)
-
-### Vendor Dashboard
-![Vendor](screenshots/vendor.png)
+---
 
 ## 🛠️ Tech Stack
 
-- **Backend**: Django 6.0, Django REST Framework 3.16
-- **Database**: PostgreSQL 14 (Production), SQLite (Development)
-- **Real-time**: Django Channels 4.3, Daphne
+- **Backend**: Django 5.2, Django REST Framework 3.16
+- **Database**: PostgreSQL / SQLite
+- **Real-time**: Django Channels, WebSocket
 - **Authentication**: Token-based (DRF)
-- **Deployment**: Gunicorn, WhiteNoise
-- **Additional**: django-filter, Pillow, django-cors-headers
+- **Deployment**: Gunicorn, Railway, Render
 
-## 📁 Project Structure
+---
 
-```
-zomato-clone/
-├── users/              # User authentication & profiles
-├── restaurants/        # Restaurant, menu, food items
-├── orders/            # Orders, cart, reviews
-├── templates/         # HTML templates
-│   ├── auth/         # Login/Register pages
-│   ├── customer/     # Customer dashboard
-│   ├── vendor/       # Vendor dashboard
-│   └── restaurants/  # Restaurant pages
-├── zomato_clone/      # Main project settings
-├── static/            # CSS, JS, images
-├── media/             # User uploaded files
-├── .env.example       # Environment variables template
-├── requirements.txt   # Python dependencies
-├── Procfile          # For deployment
-├── runtime.txt       # Python version
-└── README.md
-```
+## 🚀 Quick Start
 
-## 🏃 Quick Start
-
-### Prerequisites
-- Python 3.11+
-- PostgreSQL 14+ (or SQLite for development)
-- Git
-
-### Installation
-
-1. **Clone the repository**
+### 1. Clone Repository
 ```bash
-git clone https://github.com/YOUR_USERNAME/zomato-clone.git
+git clone https://github.com/Pradhyumn1/zomato-clone.git
 cd zomato-clone
 ```
 
-2. **Create virtual environment**
+### 2. Create Virtual Environment
 ```bash
 python -m venv .venv
-source .venv/bin/activate  # On Windows: .venv\Scripts\activate
+source .venv/bin/activate  # Windows: .venv\Scripts\activate
 ```
 
-3. **Install dependencies**
+### 3. Install Dependencies
 ```bash
 pip install -r requirements.txt
 ```
 
-4. **Set up environment variables**
-```bash
-cp .env.example .env
-# Edit .env with your database credentials
-```
-
-5. **Run migrations**
+### 4. Run Migrations
 ```bash
 python manage.py migrate
 ```
 
-6. **Create superuser**
+### 5. Create Superuser
 ```bash
 python manage.py createsuperuser
 ```
 
-7. **Load demo data (optional)**
+### 6. Load Demo Data (Optional)
 ```bash
 python populate_data.py
 ```
 
-8. **Run development server**
+### 7. Run Server
 ```bash
 python manage.py runserver
 ```
 
-Visit: [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
+Visit: http://127.0.0.1:8000/
 
-## 📡 API Documentation
+---
+
+## 📡 API Endpoints
 
 ### Authentication
-- `POST /api/auth/register/` - Register new user
-- `POST /api/auth/login/` - Login and get token
-- `GET/PUT /api/auth/profile/` - View/update profile
+- `POST /api/auth/register/` - Register user
+- `POST /api/auth/login/` - Get auth token
+- `GET /api/auth/profile/` - User profile
 
 ### Restaurants
-- `GET /api/restaurant/vendors/` - List all restaurants
-- `GET /api/restaurant/vendors/?search=Pizza` - Search restaurants
-- `GET /api/restaurant/menu-items/` - List menu items
-- `POST /api/restaurant/vendors/` - Create restaurant (Vendor only)
+- `GET /api/restaurant/vendors/` - List restaurants
+- `GET /api/restaurant/menu-items/` - Menu items
+- `POST /api/restaurant/vendors/` - Create restaurant (Vendor)
 
-### Orders & Cart
+### Orders
 - `GET /api/cart/` - View cart
-- `POST /api/cart/` - Add item to cart
-- `DELETE /api/cart/{id}/` - Remove from cart
+- `POST /api/cart/` - Add to cart
 - `POST /api/orders/place_order/` - Place order
-- `GET /api/orders/` - View order history
-- `POST /api/orders/{id}/update_status/` - Update status
-- `POST /api/orders/{id}/pay_order/` - Process payment
+- `GET /api/orders/` - Order history
 
 ### Reviews
 - `GET /api/reviews/` - List reviews
 - `POST /api/reviews/` - Submit review
 
-### WebSocket
-- `ws://localhost:8000/ws/orders/{order_id}/` - Real-time order updates
+---
 
-## 🧪 Testing the API
+## 🌐 Deployment
 
-### Login and Get Token
-```bash
-curl -X POST http://127.0.0.1:8000/api/auth/login/ \
-  -H "Content-Type: application/json" \
-  -d '{"username": "your_username", "password": "your_password"}'
-```
-
-### Place an Order
-```bash
-curl -X POST http://127.0.0.1:8000/api/orders/place_order/ \
-  -H "Content-Type: application/json" \
-  -H "Authorization: Token YOUR_TOKEN" \
-  -d '{
-    "vendor_id": 1,
-    "items": [
-      {"food_item_id": 1, "quantity": 2}
-    ]
-  }'
-```
-
-## 🚀 Deployment
+### Deploy to Railway (Free)
+1. Visit [railway.app](https://railway.app/)
+2. Sign in with GitHub
+3. Deploy from: `Pradhyumn1/zomato-clone`
+4. Add PostgreSQL database
+5. Set environment variables
+6. Deploy!
 
 ### Deploy to Render
+See [DEPLOYMENT.md](DEPLOYMENT.md) for detailed instructions.
 
-1. Push code to GitHub
-2. Create new Web Service on [Render.com](https://render.com)
-3. Connect your repository
-4. Set environment variables
-5. Deploy!
+---
 
-**See [DEPLOYMENT.md](DEPLOYMENT.md) for detailed instructions**
+## 📁 Project Structure
 
-### Deploy to Railway
-
-```bash
-npm install -g @railway/cli
-railway login
-railway init
-railway up
+```
+zomato-clone/
+├── users/              # User authentication
+├── restaurants/        # Restaurant management
+├── orders/             # Orders & cart
+├── templates/          # HTML templates
+├── docs/              # GitHub Pages
+├── requirements.txt   # Dependencies
+├── Procfile          # Deployment
+├── runtime.txt       # Python version
+└── README.md
 ```
 
-## 🔐 Environment Variables
+---
 
-Create a `.env` file with:
+## 🔑 Environment Variables
+
+Create `.env` file:
 
 ```env
-DEBUG=False
 SECRET_KEY=your-secret-key
-ALLOWED_HOSTS=yourdomain.com
-
-DB_ENGINE=django.db.backends.postgresql
-DB_NAME=zomato_db
-DB_USER=your_db_user
-DB_PASSWORD=your_db_password
-DB_HOST=localhost
-DB_PORT=5432
+DEBUG=False
+ALLOWED_HOSTS=.railway.app,.onrender.com
+DATABASE_URL=your-database-url
 ```
 
-## 📊 Database Models
-
-- **User**: Custom user model with roles (Customer/Vendor/Delivery/Admin)
-- **Vendor**: Restaurant profile with location and cuisine type
-- **MenuCategory**: Menu categories (e.g., "Pizzas", "Burgers")
-- **FoodItem**: Individual menu items with pricing
-- **Order**: Customer orders with status tracking
-- **OrderItem**: Line items within orders
-- **Cart**: Shopping cart for customers
-- **Review**: Customer reviews and ratings
-
-## 🎯 Key Features Implemented
-
-✅ User authentication with multiple roles  
-✅ Restaurant CRUD operations  
-✅ Menu management  
-✅ Shopping cart system  
-✅ Order placement and tracking  
-✅ Real-time WebSocket notifications  
-✅ Reviews and ratings  
-✅ Search and filter functionality  
-✅ Admin dashboard  
-✅ RESTful API  
-✅ Token-based authentication  
-✅ Beautiful responsive UI  
+---
 
 ## 🤝 Contributing
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+Contributions welcome! Please fork and submit a PR.
+
+---
 
 ## 📄 License
 
-This project is open source and available under the [MIT License](LICENSE).
+MIT License - See [LICENSE](LICENSE) file
+
+---
 
 ## 👨‍💻 Author
 
 **Pradhyumn Yadav**
+- GitHub: [@Pradhyumn1](https://github.com/Pradhyumn1)
 - Email: pradhyumnsingh91@gmail.com
-- GitHub: [@YOUR_USERNAME](https://github.com/YOUR_USERNAME)
+
+---
 
 ## 🙏 Acknowledgments
 
-- Django & DRF documentation
+- Django & DRF Documentation
 - Zomato for design inspiration
 - Open source community
 
 ---
 
-**⭐ If you like this project, please give it a star!**
+⭐ **Star this repo if you find it helpful!**
