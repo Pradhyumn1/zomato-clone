@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zomato Clone - Portfolio Project</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #f8f9fa;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #e23744 0%, #ff6b78 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        .header p {
+            font-size: 1.3em;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 40px;
+            background: white;
+            color: #e23744;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            margin: 10px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .section {
+            margin: 60px 0;
+        }
+
+        .section h2 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            color: #e23744;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature h3 {
+            color: #e23744;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .tech {
+            background: #e23744;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+
+        .demo-video {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <h1>🍕 Zomato Clone</h1>
+        <p>Complete Food Delivery Platform - Portfolio Project</p>
+        <a href="https://github.com/Pradhyumn1/zomato-clone" class="btn" target="_blank">View on GitHub</a>
+        <a href="#demo" class="btn">See Features</a>
+    </div>
+
+    <div class="container">
+        <div class="section">
+            <h2>About This Project</h2>
+            <p style="font-size: 1.2em; line-height: 1.8;">
+                A full-stack food delivery platform built with Django and Django REST Framework.
+                This project demonstrates expertise in backend development, RESTful APIs,
+                real-time WebSocket communication, and complex database relationships.
+            </p>
+        </div>
+
+        <div class="section" id="demo">
+            <h2>✨ Key Features</h2>
+            <div class="features">
+                <div class="feature">
+                    <h3>🔐 Multi-User System</h3>
+                    <p>Supports Customers, Restaurant Owners, Delivery Personnel, and Admins with role-based access
+                        control.</p>
+                </div>
+                <div class="feature">
+                    <h3>🍽️ Restaurant Management</h3>
+                    <p>Complete CRUD operations for restaurants, menu categories, and food items with search and
+                        filtering.</p>
+                </div>
+                <div class="feature">
+                    <h3>🛒 Order System</h3>
+                    <p>Shopping cart, order placement, tracking, and real-time status updates via WebSocket.</p>
+                </div>
+                <div class="feature">
+                    <h3>⭐ Reviews & Ratings</h3>
+                    <p>Customer review system with 1-5 star ratings for restaurants.</p>
+                </div>
+                <div class="feature">
+                    <h3>🔧 REST API</h3>
+                    <p>Complete RESTful API with token authentication for all operations.</p>
+                </div>
+                <div class="feature">
+                    <h3>🎨 Modern UI</h3>
+                    <p>Beautiful Zomato-like design with responsive layouts for all devices.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🛠️ Tech Stack</h2>
+            <div class="tech-stack">
+                <span class="tech">Django 5.2</span>
+                <span class="tech">Django REST Framework</span>
+                <span class="tech">PostgreSQL</span>
+                <span class="tech">Django Channels</span>
+                <span class="tech">WebSocket</span>
+                <span class="tech">Token Auth</span>
+                <span class="tech">Python 3.11</span>
+                <span class="tech">Gunicorn</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>📊 Project Statistics</h2>
+            <div class="features">
+                <div class="feature">
+                    <h3>3,300+</h3>
+                    <p>Lines of Code</p>
+                </div>
+                <div class="feature">
+                    <h3>13</h3>
+                    <p>Database Models</p>
+                </div>
+                <div class="feature">
+                    <h3>20+</h3>
+                    <p>API Endpoints</p>
+                </div>
+                <div class="feature">
+                    <h3>100%</h3>
+                    <p>Responsive Design</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🌐 Links</h2>
+            <div style="text-align: center;">
+                <a href="https://github.com/Pradhyumn1/zomato-clone" class="btn" target="_blank"
+                    style="background: #333;">
+                    📂 GitHub Repository
+                </a>
+                <a href="https://github.com/Pradhyumn1/zomato-clone#readme" class="btn" target="_blank"
+                    style="background: #e23744; color: white;">
+                    📖 Documentation
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <h3>Developed by Pradhyumn Yadav</h3>
+        <p style="margin-top: 15px;">
+            <a href="https://github.com/Pradhyumn1" style="color: white; margin: 0 15px;">GitHub</a>
+            <a href="mailto:pradhyumnsingh91@gmail.com" style="color: white; margin: 0 15px;">Email</a>
+        </p>
+        <p style="margin-top: 20px; opacity: 0.7;">© 2025 | Built with Django & DRF</p>
+    </footer>
+</body>
+
+</html>
